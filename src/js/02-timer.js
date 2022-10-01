@@ -37,7 +37,7 @@ intervalId = null;
 refs.startBtn.addEventListener('click', onStartBtnClick)
 
 function onStartBtnClick() {
-  timeoutID = setInterval(() => {
+  intervalId = setInterval(() => {
     updateTime()
   }, 1000)
   refs.dateTimePicker.disabled = true
