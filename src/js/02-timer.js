@@ -9,7 +9,7 @@ const refs = {
     minutes: document.querySelector('[data-minutes]'),
     seconds: document.querySelector('[data-seconds]'),
     dateTimePicker: document.querySelector('#datetime-picker'),
-   }
+    }
 let userDate = null;
 refs.startBtn.setAttribute('disabled', true);
 
@@ -33,7 +33,7 @@ const options = {
     },
 };
 flatpickr(refs.dateTimePicker, options);
-intervalId = null;
+let intervalId = null;
 refs.startBtn.addEventListener('click', onStartBtnClick)
 
 function onStartBtnClick() {
@@ -45,10 +45,10 @@ function onStartBtnClick() {
 }
 
 function updateTime() {
-  const currentTime = new Date()
-  const selectedTime = new Date(refs.dateTimePicker.value)
+  const currentTime = new Date();
+  const selectedTime = new Date(refs.dateTimePicker.value);
 
-  const deltaTime = selectedTime - currentTime
+  const deltaTime = selectedTime - currentTime;
 
   if (deltaTime < 0) {
     return
